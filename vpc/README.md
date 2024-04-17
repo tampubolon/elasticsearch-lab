@@ -1,0 +1,1 @@
+This Terraform project aims to create a VPC for an Elasticsearch cluster. The VPC consists of three public subnets and three private subnets.
