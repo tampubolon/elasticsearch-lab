@@ -48,15 +48,13 @@ data "aws_subnet_ids" "private" {
   }
 }
 
-
 # Public ec2 instance for non Elasticsearch
 resource "aws_instance" "public_ec2_instances" {
-  # count = local.public_instance_count
   count = local.public_instance_non_count
 
   ami                         = var.ami
   instance_type               = local.ec2_instances.public[count.index].instance_type
-  subnet_id                   = element(tolist(data.aws_subnet_ids.public.ids), local.public_subnet_indices[count.index % local.public_subnet_count])
+  subnet_id                   = element(tolist(data.aws_subnet_ids.public.ids), count.index % local.public_subnet_count)
   key_name                    = "elasticsearch"
   associate_public_ip_address = true
 
@@ -72,7 +70,6 @@ resource "aws_instance" "public_ec2_instances" {
     elasticsearch = local.ec2_instances.public[count.index].elasticsearch
   })
 }
-
 
 # Public ec2 instance for Elasticsearch
 resource "aws_instance" "public_es_ec2_instances" {
