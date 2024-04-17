@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket  = "elasticsearch-martinus"
-    key     = "elasticsearch-lab/ec2-instances.tfstate"
+    key     = "elasticsearch-lab/ec2.tfstate"
     region  = "ap-southeast-1"
     encrypt = true
   }
