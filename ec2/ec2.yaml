@@ -1,11 +1,5 @@
 public:
   - name: "ansible-host"
     instance_type: "t2.small"
-    elasticsearch: "false" 
-  - name: "es-2"
-    instance_type: "t2.small"
-    elasticsearch: "true"            
-private:
-  - name: "es-3"
-    instance_type: "t2.small"
-    elasticsearch: "true"
+    elasticsearch: "false"             
+private: []
