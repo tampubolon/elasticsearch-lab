@@ -4,5 +4,5 @@ public:
     elasticsearch: "false"
   - name: "es-1"
     instance_type: "t2.medium"
-    elasticsearch: "false"             
+    elasticsearch: "true"         
 private: []
