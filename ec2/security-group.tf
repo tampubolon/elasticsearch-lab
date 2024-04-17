@@ -51,7 +51,7 @@ resource "aws_security_group" "public_sg" {
 
 #SG for public Elasticsearch EC2 instance
 resource "aws_security_group" "public_es_sg" {
-  name        = "public_ec2_security_group"
+  name        = "public_es_ec2_security_group"
   description = "Security group for public EC2 instances"
   vpc_id      = local.vpc_id
 
@@ -100,7 +100,7 @@ resource "aws_security_group" "public_es_sg" {
 
 #SG for private Elasticsearch EC2 instance
 resource "aws_security_group" "private_es_sg" {
-  name        = "private_ec2_security_group"
+  name        = "private_es_ec2_security_group"
   description = "Security group for private EC2 instances"
   vpc_id      = local.vpc_id
 
