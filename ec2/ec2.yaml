@@ -2,5 +2,11 @@ ansible:
   - name: "ansible-host"
     instance_type: "t2.micro"   
 elasticsearch:  
-  public: []                         
+  public: 
+    - name: "node-1"
+      instance_type: "t2.medium"     
+    - name: "node-2"
+      instance_type: "t2.small"
+    - name: "node-3"
+      instance_type: "t2.small"                            
   private: []
