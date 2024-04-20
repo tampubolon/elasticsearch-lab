@@ -4,9 +4,9 @@ ansible:
 elasticsearch:  
   public: 
     - name: "node-1"
-      instance_type: "t2.medium"                           
-  private:
+      instance_type: "t2.medium"     
     - name: "node-2"
       instance_type: "t2.small"
     - name: "node-3"
-      instance_type: "t2.small"
+      instance_type: "t2.small"                            
+  private: []
