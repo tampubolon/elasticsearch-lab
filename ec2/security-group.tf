@@ -78,16 +78,16 @@ resource "aws_security_group" "public_es_sg" {
 
   ingress {
     from_port   = 9200
-    to_port     = 9200
+    to_port     = 9300
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
-    from_port   = 9300
+    from_port   = 9200
     to_port     = 9300
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["127.0.0.0/8"]
   }
 
   egress {
