@@ -1,6 +1,6 @@
-ansible: 
+ansible:
   - name: "ansible-host"
-    instance_type: "t2.medium"
+    instance_type: "t2.micro"   
 elasticsearch:  
   public: []                 
   private: []

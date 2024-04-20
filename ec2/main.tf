@@ -21,7 +21,7 @@ locals {
     for instance in local.ec2_instances.ansible : {
       name          = instance.name
       instance_type = instance.instance_type
-      elasticsearch = try(instance.elasticsearch, null)
+      ansible       = try(instance.ansible, null)
     }
   ]
 
@@ -82,7 +82,7 @@ resource "aws_instance" "ansible" {
   vpc_security_group_ids = [aws_security_group.ansible.id]
 
   user_data = templatefile("${path.module}/user_data_ansible.tpl", {
-    elasticsearch = local.ansible_instances[count.index].elasticsearch
+    ansible = local.ansible_instances[count.index].ansible
   })
 }
 
